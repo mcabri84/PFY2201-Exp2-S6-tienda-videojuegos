@@ -51,8 +51,8 @@ array cargado, y las tarjetas se agregan al DOM mediante un DocumentFragment.
 6. Probar Quitar y Vaciar carrito.
 7. Revisar el menú móvil y la distribución en móvil, tablet y escritorio.
 8. Revisar en DevTools la petición a productos.json y su respuesta.
-9. Renombrar temporalmente productos.json, recargar y comprobar el mensaje de error.
-   Restaurar el nombre y recargar para recuperar el catálogo.
+9. Bloquear la URL de productos.json en DevTools y recargar para comprobar el error.
+   Desactivar el bloqueo y recargar para recuperar el catálogo.
 
 ## Recursos
 
@@ -63,5 +63,21 @@ oficiales. Los precios y los datos de contacto son ejemplos académicos.
 - Fetch API: https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
 - Bootstrap usa la licencia MIT, incluida en BOOTSTRAP-LICENSE.txt.
 
-El repositorio público y la publicación mediante la rama gh-pages se configurarán
-al preparar la entrega. Las capturas de funcionamiento se obtendrán en el navegador.
+## Publicación
+
+- [Repositorio en GitHub](https://github.com/mcabri84/PFY2201-Exp2-S6-tienda-videojuegos)
+- [Sitio publicado](https://mcabri84.github.io/PFY2201-Exp2-S6-tienda-videojuegos/)
+- Rama de despliegue: `gh-pages`, carpeta `/`.
+
+## Capturas
+
+Evidencias de las pruebas locales y de la publicación en GitHub Pages.
+
+- [01_estructura_y_publicacion.png](capturas/01_estructura_y_publicacion.png)
+- [02_carrito_dinamico.png](capturas/02_carrito_dinamico.png)
+- [03_busqueda_submit.png](capturas/03_busqueda_submit.png)
+- [04_categoria_playstation.png](capturas/04_categoria_playstation.png)
+- [05_menu_movil.png](capturas/05_menu_movil.png)
+- [06_vista_movil_completa.png](capturas/06_vista_movil_completa.png)
+- [07_fetch_json_200.png](capturas/07_fetch_json_200.png)
+- [08_error_carga_controlado.png](capturas/08_error_carga_controlado.png)
