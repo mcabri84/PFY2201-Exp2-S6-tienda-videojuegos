@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GameZone: catalogo de videojuegos para PlayStation, Nintendo y Xbox.">
+    <title>GameZone - Tienda de Videojuegos</title>
+    <link rel="icon" href="assets/img/gamezone.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+    <a class="visually-hidden-focusable salto-contenido" href="#productos">Ir al cat&aacute;logo</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegacion principal">
+            <div class="container py-2">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+                    <img src="assets/img/gamezone.svg" alt="" width="38" height="38">
+                    GameZone
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                        aria-expanded="false" aria-label="Abrir menu de categorias">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav mx-auto gap-lg-1 py-3 py-lg-0">
+                        <li class="nav-item"><button class="nav-link active" type="button" data-categoria="Todas" aria-pressed="true" disabled>Todos</button></li>
+                        <li class="nav-item"><button class="nav-link" type="button" data-categoria="PlayStation 5" aria-pressed="false" disabled>PlayStation 5</button></li>
+                        <li class="nav-item"><button class="nav-link" type="button" data-categoria="Nintendo Switch" aria-pressed="false" disabled>Nintendo Switch</button></li>
+                        <li class="nav-item"><button class="nav-link" type="button" data-categoria="Xbox Series X" aria-pressed="false" disabled>Xbox Series X</button></li>
+                    </ul>
+                    <a class="btn btn-carrito" href="#carrito">
+                        Mi carrito <span id="contador-carrito" class="badge ms-1">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section id="inicio" class="bienvenida">
+            <div class="container py-4 py-lg-5">
+                <p class="etiqueta mb-2">TU TIENDA DE VIDEOJUEGOS</p>
+                <h1 class="fw-bold mb-3">Bienvenido a <span>GameZone</span></h1>
+                <p class="mb-0">Encuentra videojuegos para diferentes plataformas,<br class="d-none d-md-block"> novedades y grandes cl&aacute;sicos en un solo lugar.</p>
+            </div>
+        </section>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+        <div class="row g-4 align-items-start">
+            <section id="productos" class="col-12 col-lg-8 col-xl-9" aria-labelledby="titulo-productos">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <h2 id="titulo-productos" class="h3 fw-bold mb-0">Explora el cat&aacute;logo</h2>
+                    <p id="resultado-busqueda" class="text-secondary small mb-0" role="status">Cargando productos...</p>
+                </div>
+                <form id="formulario-busqueda" class="buscador mb-4" role="search">
+                    <label for="busqueda" class="form-label small fw-semibold">Buscar por nombre del juego</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        <input id="busqueda" class="form-control" type="search" placeholder="Ejemplo: Minecraft" maxlength="100" disabled>
+                        <button id="boton-buscar" class="btn btn-primary" type="submit" disabled>Buscar</button>
+                        <button id="limpiar-busqueda" class="btn btn-outline-secondary" type="button" disabled>Ver todos</button>
+                    </div>
+                </form>
+                <div id="error-carga" class="alert alert-danger" role="alert" hidden></div>
+                <p id="sin-resultados" class="alert alert-light border" hidden>No encontramos juegos con esa b&uacute;squeda. Prueba otro nombre o pulsa Ver todos.</p>
+                <div id="lista-productos" class="row g-3" aria-busy="true"></div>
+                <noscript><p class="alert alert-warning">Activa JavaScript en tu navegador para ver los juegos y utilizar el carrito.</p></noscript>
+            </section>
+
+            <aside id="carrito" class="col-12 col-lg-4 col-xl-3" aria-labelledby="titulo-carrito">
+                <div class="resumen-carrito">
+                    <div class="cabecera-carrito">
+                        <p class="etiqueta mb-2">TU SELECCI&Oacute;N</p>
+                        <h2 id="titulo-carrito" class="h4 fw-bold mb-0">Mi carrito</h2>
+                    </div>
+                    <div class="p-3 p-xl-4">
+                        <p id="carrito-vacio" class="text-secondary small">Tu carrito est&aacute; vac&iacute;o. Agrega un juego para comenzar.</p>
+                        <ul id="lista-carrito" class="list-unstyled mb-0"></ul>
+                        <div class="total-carrito d-flex justify-content-between gap-2 pt-3 mt-3">
+                            <strong>Total</strong><strong id="total-carrito">$0</strong>
+                        </div>
+                        <p id="cantidad-carrito" class="small text-secondary mt-1">0 productos</p>
+                        <button id="vaciar-carrito" class="btn btn-outline-secondary btn-sm w-100" type="button" disabled>Vaciar carrito</button>
+                        <p id="mensaje-carrito" class="small mensaje-carrito mt-3 mb-0" role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section id="nosotros" class="sobre-nosotros mt-5 pt-4" aria-labelledby="titulo-nosotros">
+            <h2 id="titulo-nosotros" class="h5 fw-bold">Sobre GameZone</h2>
+            <p class="text-secondary mb-0">Somos una tienda dedicada a ofrecer videojuegos para las principales plataformas del mercado.</p>
+        </section>
+    </main>
+
+    <footer id="contacto" class="py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+            <div><p class="fw-bold mb-1">GameZone</p><p class="small mb-0">2026 &middot; Tienda demostrativa</p></div>
+            <div><p class="fw-semibold mb-1">Contacto</p><p class="small mb-1">contacto@gamezone.cl &middot; +56 2 2345 6789</p><p class="small mb-0 text-white-50">Datos de contacto y precios de ejemplo.</p></div>
+        </div>
+    </footer>
+</body>
+</html>

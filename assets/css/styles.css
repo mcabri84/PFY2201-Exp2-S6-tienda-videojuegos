@@ -1,0 +1,65 @@
+/* Identidad visual de GameZone. Bootstrap organiza filas y columnas. */
+:root {
+    --color-principal: #5f32e6;
+    --color-oscuro: #171422;
+    --color-suave: #f1edff;
+}
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7fb;
+    color: #272331;
+    line-height: 1.6;
+}
+header .navbar { background: var(--color-oscuro); }
+.navbar-brand { font-size: 1.55rem; font-weight: 800; letter-spacing: -.7px; }
+.navbar .nav-link { color: #d8d2e8; font-size: .9rem; padding: .6rem .75rem; border-radius: .45rem; }
+.navbar .nav-link:hover, .navbar .nav-link.active { background: #342450; color: #fff; }
+.navbar .nav-link:disabled { opacity: .6; }
+.btn-carrito { background: #fff; color: #282034; font-weight: 600; }
+.btn-carrito:hover { background: #ede5ff; color: #282034; }
+.btn-carrito .badge { background: var(--color-principal); }
+.bienvenida { background: linear-gradient(110deg, #eee7ff, #f7f4ff 70%); border-bottom: 1px solid #e2d9f5; }
+.bienvenida h1 { font-size: clamp(1.9rem, 3.4vw, 3rem); letter-spacing: -1.2px; }
+.bienvenida h1 span { color: var(--color-principal); }
+.bienvenida p:last-child { color: #575066; }
+.etiqueta { font-size: .68rem; letter-spacing: 1.8px; font-weight: 800; color: #68469e; }
+.buscador { padding: 1rem; border: 1px solid #e4e0ed; border-radius: .75rem; background: #fff; }
+.buscador .form-control { flex: 1 1 180px; width: auto; min-width: 0; }
+.btn-primary {
+    --bs-btn-bg: #5f32e6;
+    --bs-btn-border-color: #5f32e6;
+    --bs-btn-hover-bg: #4523a8;
+    --bs-btn-hover-border-color: #4523a8;
+    --bs-btn-active-bg: #4523a8;
+    --bs-btn-active-border-color: #4523a8;
+    --bs-btn-disabled-bg: #8a76bb;
+    --bs-btn-disabled-border-color: #8a76bb;
+    --bs-btn-focus-shadow-rgb: 95, 50, 230;
+}
+.producto { border: 1px solid #e1dce9; border-radius: .8rem; overflow: hidden; background: #fff; }
+.producto .card-img-top { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; height: auto; }
+.producto .card-body { padding: 1rem; }
+.producto .card-title { font-size: 1.06rem; line-height: 1.4; min-height: 2.8em; font-weight: 700; }
+.plataforma { font-size: .72rem; font-weight: 600; color: #5e526d; }
+.precio { color: #4523a8; font-size: 1.4rem; font-weight: 800; }
+.producto .btn { min-height: 44px; font-size: .85rem; }
+.resumen-carrito { border: 1px solid #ded6ed; border-radius: .9rem; background: #fff; overflow: hidden; }
+.cabecera-carrito { background: #eee8fa; border-bottom: 1px solid #ded6ed; padding: 1.25rem 1.5rem; }
+.item-carrito { padding: .8rem 0; border-bottom: 1px solid #eee9f4; }
+.nombre-carrito { font-size: .88rem; font-weight: 700; overflow-wrap: anywhere; }
+.quitar-producto { color: #7b2440; font-size: .75rem; padding: .1rem 0; border: 0; background: transparent; text-decoration: underline; }
+.total-carrito { border-top: 2px solid #ece7f4; font-size: 1.15rem; }
+#total-carrito { color: #4523a8; white-space: nowrap; }
+.mensaje-carrito { color: #4c3575; overflow-wrap: anywhere; }
+.sobre-nosotros { border-top: 1px solid #ded8e8; }
+footer { background: var(--color-oscuro); color: #fff; }
+.salto-contenido { background: #fff; color: #4523a8; padding: .7rem 1rem; }
+:focus-visible { outline: 3px solid #916dea; outline-offset: 3px; }
+@media (min-width: 992px) { #carrito { position: sticky; top: 1rem; } }
+@media (max-width: 575.98px) {
+    .bienvenida h1 { letter-spacing: -.6px; }
+    .producto .card-title { min-height: auto; }
+    .buscador .form-control { flex-basis: 100%; }
+    .buscador .btn { flex: 1; }
+}

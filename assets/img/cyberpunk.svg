@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="Arial,Helvetica,sans-serif">
+<rect width="640" height="400" fill="#ece64b"/>
+<path d="M0 349H56V240H104V204H156V261H201V165H242V231H292V183H333V264H377V144H426V211H466V193H506V247H553V177H611V230H640V400H0Z" fill="#28213a"/>
+<path d="M0 366H81V278H131V319H175V246H222V303H267V249H309V333H359V271H403V239H447V328H494V277H539V319H596V251H640V400H0Z" fill="#15182c"/>
+<g stroke="#73dce2" stroke-width="5"><path d="M214 179v61m178-79v90m179-59v65M73 256h18m-18 19h18m21 19h12M478 211h15m-15 16h15"/></g>
+<g stroke="#ea67b3" stroke-width="5"><path d="M276 206h41m-41 20h41m88-5v34M361 291h23m-23 18h23m-164-40v34"/></g>
+<path d="M0 379H640" stroke="#df55ab" stroke-width="3"/>
+<text x="28" y="89" font-size="49" font-weight="900" font-style="italic" fill="#25213a">CYBERPUNK</text>
+<text x="35" y="132" font-size="31" font-weight="700" letter-spacing="10" fill="#25213a">2077</text>
+</svg>

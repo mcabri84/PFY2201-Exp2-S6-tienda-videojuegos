@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="Arial,Helvetica,sans-serif">
+<defs><linearGradient id="cielo" x2="0" y2="1"><stop stop-color="#462261"/><stop offset="1" stop-color="#ed785d"/></linearGradient></defs>
+<rect width="640" height="400" fill="url(#cielo)"/>
+<circle cx="490" cy="135" r="80" fill="#ffb975"/>
+<path d="M0 248 113 158 235 245 358 186 464 246 553 191 640 256V400H0" fill="#512449"/>
+<path d="M0 300 640 260V400H0Z" fill="#271832"/>
+<path d="M55 381 239 359M396 340 609 315" stroke="#d0a6b3" stroke-width="6"/>
+<path d="m162 286 85-49h156l70 46 65 21v33H106v-32z" fill="#e54293"/>
+<path d="m263 249-59 40h224l-40-40z" fill="#251c3b"/>
+<path d="M310 249v40" stroke="#e54293" stroke-width="8"/>
+<path d="M127 316h28M489 307h28" stroke="#fff4c2" stroke-width="9"/>
+<circle cx="194" cy="329" r="31" fill="#141020"/><circle cx="456" cy="329" r="31" fill="#141020"/>
+<circle cx="194" cy="329" r="16" fill="#c5b2d0"/><circle cx="456" cy="329" r="16" fill="#c5b2d0"/>
+<text x="33" y="88" font-size="58" font-weight="900" fill="white">FORZA</text>
+<text x="36" y="131" font-size="30" font-weight="600" letter-spacing="3" fill="#ffccb8">HORIZON 5</text>
+</svg>

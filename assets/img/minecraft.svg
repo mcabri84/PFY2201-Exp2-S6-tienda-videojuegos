@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="Arial,Helvetica,sans-serif">
+<rect width="640" height="400" fill="#b5e1e2"/>
+<rect x="470" y="43" width="73" height="73" fill="#fff4bc"/>
+<path d="M0 205H98V157H190V205H275V164H369V216H456V168H551V218H640V400H0Z" fill="#6fb99c"/>
+<path d="M0 291H79V247H163V279H235V229H333V263H421V219H498V256H576V280H640V400H0Z" fill="#3f7655"/>
+<path d="M0 329H105V304H201V336H286V311H386V291H483V325H554V307H640V400H0Z" fill="#8d6044"/>
+<path d="M0 329H105V304H201V336H286V311H386V291H483V325H554V307H640" stroke="#89bd49" stroke-width="22" fill="none"/>
+<path d="M125 333V358H147V382H184M315 340H338V363H364M522 355H549V381" stroke="#af7f53" stroke-width="12" fill="none"/>
+<rect x="447" y="179" width="26" height="125" fill="#755039"/>
+<path d="M415 133H500V164H523V210H488V230H406V192H383V163H415Z" fill="#315a36"/>
+<path d="M415 133H500V164H458V187H405V163H415Z" fill="#579747"/>
+<text x="30" y="86" font-size="47" font-weight="900" fill="#203f39">MINECRAFT</text>
+<text x="34" y="120" font-size="17" letter-spacing="3" fill="#335a4f">UN MUNDO POR CONSTRUIR</text>
+</svg>

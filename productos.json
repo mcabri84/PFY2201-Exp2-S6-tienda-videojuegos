@@ -1,0 +1,8 @@
+[
+  {"id": 1, "nombre": "EA Sports FC 26", "categoria": "PlayStation 5", "precio": 69990, "imagen": "assets/img/fc26.svg"},
+  {"id": 2, "nombre": "Minecraft", "categoria": "Nintendo Switch", "precio": 34990, "imagen": "assets/img/minecraft.svg"},
+  {"id": 3, "nombre": "Forza Horizon 5", "categoria": "Xbox Series X", "precio": 49990, "imagen": "assets/img/forza.svg"},
+  {"id": 4, "nombre": "Hogwarts Legacy", "categoria": "PlayStation 5", "precio": 44990, "imagen": "assets/img/hogwarts.svg"},
+  {"id": 5, "nombre": "Super Mario Bros. Wonder", "categoria": "Nintendo Switch", "precio": 59990, "imagen": "assets/img/mario.svg"},
+  {"id": 6, "nombre": "Cyberpunk 2077", "categoria": "Xbox Series X", "precio": 39990, "imagen": "assets/img/cyberpunk.svg"}
+]
