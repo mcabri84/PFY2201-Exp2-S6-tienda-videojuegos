@@ -1,83 +1,108 @@
-# GameZone
+# GameZone con React
 
-Actividad sumativa 2 de la semana 6 de Desarrollo Frontend I, PFY2201.
+Actividad sumativa de la semana 8 de Desarrollo Frontend I (PFY2201).
 Alumno: Miguel Cabrillana.
 
-Esta versión amplía la tienda de videojuegos de la sumativa 1. Conserva GameZone,
-los seis juegos y los precios de ejemplo del proyecto anterior, e incorpora
-Bootstrap 5 y JavaScript para mostrar el catálogo, buscar y gestionar un carrito.
+Esta versión adapta la tienda GameZone de la semana 6 a componentes funcionales
+de React. Conserva sus seis videojuegos, precios de ejemplo, imágenes, diseño
+Bootstrap, búsqueda por nombre y filtros por plataforma.
 
-## Ejecución local
+## Ejecutar el proyecto
 
-Desde la carpeta que contiene index.html:
+Requisitos: Node.js 22.12 o posterior y npm.
 
-    python3 -m http.server 8765 --bind 127.0.0.1
+    npm ci
+    npm run dev
 
-Abrir http://127.0.0.1:8765 en el navegador. El servidor HTTP permite que Fetch
-lea productos.json. Bootstrap y las ilustraciones están incluidos localmente.
+Abrir http://127.0.0.1:5173/PFY2201-Exp2-S6-tienda-videojuegos/
 
-## Archivos
+Para generar y revisar la versión publicable:
 
-- index.html: estructura semántica, navegación adaptable, búsqueda y carrito.
-- productos.json: datos de los seis productos.
-- assets/css/styles.css: identidad visual y ajustes de presentación.
-- assets/css/bootstrap.min.css: Bootstrap 5.3.3.
-- assets/js/app.js: carga, validación, filtros, eventos y actualización del DOM.
-- assets/js/bootstrap.bundle.min.js: componentes interactivos de Bootstrap.
-- assets/img/: ilustraciones SVG de los juegos y distintivo de GameZone.
+    npm run build
+    npm run preview
 
-## Funcionamiento
+Abrir http://127.0.0.1:4173/PFY2201-Exp2-S6-tienda-videojuegos/
 
-La navegación ofrece las categorías PlayStation 5, Nintendo Switch y Xbox Series X.
-El formulario busca por nombre dentro de la categoría seleccionada. Ver todos
-restablece tanto la búsqueda como la categoría.
+La carpeta dist contiene la aplicación compilada. El código fuente debe
+permanecer en la rama de desarrollo o main; el contenido compilado se publica
+en gh-pages. La configuración base de Vite corresponde al nombre del repositorio.
 
-Agregar al carrito acumula cantidades del mismo producto y actualiza el resumen,
-los subtotales y el total en pesos chilenos. Quitar elimina la línea completa;
-Vaciar carrito elimina la selección. El carrito se mantiene durante la sesión
-de la página y se reinicia al recargar.
+## Estructura y responsabilidades
 
-Fetch carga el JSON una vez. Se comprueba el estado HTTP y la estructura de los
-datos. Ante un error, se muestra un mensaje amigable. Las búsquedas utilizan el
-array cargado, y las tarjetas se agregan al DOM mediante un DocumentFragment.
+- src/App.jsx: estados del catálogo, carrito, búsqueda, categoría, carga y error.
+  Integra los componentes y realiza la petición de datos con useEffect.
+- src/components/Encabezado.jsx: navegación por plataforma y menú móvil con useState.
+- src/components/Buscador.jsx: formulario controlado con onChange y onSubmit.
+- src/components/Catalogo.jsx: vistas de carga, error, búsqueda vacía y productos.
+- src/components/TarjetaProducto.jsx: producto recibido por props y botón condicional.
+- src/components/Carrito.jsx: selección, cantidades, total y acciones para retirar o vaciar.
+- src/utils/catalogo.js: formato CLP, rutas, normalización y validación del JSON.
+- public/productos.json: catálogo cargado mediante fetch.
+- public/assets/img/: imágenes originales de GameZone.
+- assets/css/: estilos originales y Bootstrap 5.3.3.
+
+## Funcionalidades de la semana 8
+
+useState mantiene el catálogo, el carrito y los controles interactivos.
+Los totales se calculan a partir del carrito y las actualizaciones crean arrays
+nuevos para no modificar directamente el estado.
+
+useEffect carga productos.json al montar App. Se revisa la respuesta HTTP y la
+estructura de los productos. La limpieza del efecto cancela la petición y evita
+actualizar un componente desmontado.
+
+El renderizado condicional muestra la carga, los errores, las búsquedas sin
+resultados y el carrito vacío. Cuando un juego está seleccionado, su botón
+cambia de color y muestra "En el carrito", su cantidad y la opción de agregar otro.
+Al quitarlo, el botón vuelve a su estado inicial.
+
+Agregar un mismo juego acumula unidades. Quitar elimina toda su línea y Vaciar
+carrito elimina la selección completa. El carrito vive en memoria y se reinicia
+al recargar la página.
 
 ## Comprobación manual
 
-1. Verificar seis juegos con imagen, nombre, plataforma, precio y botón.
-2. Buscar Minecraft con el botón Buscar y con Enter.
-3. Probar un nombre inexistente y luego Ver todos.
-4. Filtrar por cada plataforma y comprobar sus dos juegos.
-5. Agregar dos unidades de Minecraft y una de EA Sports FC 26: total $139.970.
-6. Probar Quitar y Vaciar carrito.
-7. Revisar el menú móvil y la distribución en móvil, tablet y escritorio.
-8. Revisar en DevTools la petición a productos.json y su respuesta.
-9. Bloquear la URL de productos.json en DevTools y recargar para comprobar el error.
-   Desactivar el bloqueo y recargar para recuperar el catálogo.
+1. Confirmar seis juegos y la petición correcta a productos.json.
+2. Agregar dos Minecraft y un EA Sports FC 26: 3 unidades y total esperado $139.970.
+3. Quitar Minecraft: debe quedar FC 26, con 1 unidad y total $69.990.
+4. Vaciar el carrito: mensaje de carrito vacío, 0 productos y total $0.
+5. Verificar que los botones cambian según los juegos presentes en el carrito.
+6. Buscar por nombre, filtrar por plataforma y restablecer con Ver todos.
+7. Revisar el menú y la distribución en una pantalla móvil.
 
-## Recursos
+## Evidencias de la semana 8
 
-Las ilustraciones SVG son representaciones temáticas del catálogo, no carátulas
-oficiales. Los precios y los datos de contacto son ejemplos académicos.
+Las siguientes capturas corresponden a las pruebas locales realizadas el
+5 de octubre de 2026 con esta version React:
 
-- Bootstrap 5.3.3: https://getbootstrap.com/docs/5.3/
-- Fetch API: https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
-- Bootstrap usa la licencia MIT, incluida en BOOTSTRAP-LICENSE.txt.
+- [Carrito con 3 unidades y total $139.970](capturas/semana8/01_carrito_agregado.png).
+- [Eliminacion de Minecraft y total $69.990](capturas/semana8/02_producto_eliminado.png).
+- [Carrito vacio, total $0 y botones restablecidos](capturas/semana8/03_carrito_vacio.png).
+- [Continuacion del catalogo y sus productos](capturas/semana8/04_catalogo_productos.png).
 
-## Publicación
+Las capturas comprueban las cantidades, los totales, la eliminacion, el vaciado
+y los cambios de texto y estilo de los botones. La carga dinamica se implementa
+en App.jsx con useEffect y fetch sobre public/productos.json.
+Las capturas situadas directamente en capturas pertenecen a la semana 6.
 
-- [Repositorio en GitHub](https://github.com/mcabri84/PFY2201-Exp2-S6-tienda-videojuegos)
-- [Sitio publicado](https://mcabri84.github.io/PFY2201-Exp2-S6-tienda-videojuegos/)
-- Rama de despliegue: `gh-pages`, carpeta `/`.
+## Publicacion
 
-## Capturas
+- [Repositorio publico](https://github.com/mcabri84/PFY2201-Exp2-S6-tienda-videojuegos).
+- [Aplicacion en GitHub Pages](https://mcabri84.github.io/PFY2201-Exp2-S6-tienda-videojuegos/).
+- Codigo fuente y evidencias: rama main.
+- Aplicacion compilada: rama gh-pages, carpeta raiz.
 
-Evidencias de las pruebas locales y de la publicación en GitHub Pages.
+La etiqueta respaldo-s6 conserva la version anterior; su nombre completo
+incluye la fecha y hora del respaldo. Los cambios del despliegue conservan
+el historial de la rama gh-pages.
 
-- [01_estructura_y_publicacion.png](capturas/01_estructura_y_publicacion.png)
-- [02_carrito_dinamico.png](capturas/02_carrito_dinamico.png)
-- [03_busqueda_submit.png](capturas/03_busqueda_submit.png)
-- [04_categoria_playstation.png](capturas/04_categoria_playstation.png)
-- [05_menu_movil.png](capturas/05_menu_movil.png)
-- [06_vista_movil_completa.png](capturas/06_vista_movil_completa.png)
-- [07_fetch_json_200.png](capturas/07_fetch_json_200.png)
-- [08_error_carga_controlado.png](capturas/08_error_carga_controlado.png)
+## Recursos y atribuciones
+
+Los precios y contactos son ejemplos académicos. Las imágenes SVG son
+ilustraciones temáticas, no carátulas oficiales.
+Bootstrap conserva su licencia MIT en BOOTSTRAP-LICENSE.txt.
+
+- React useState: https://react.dev/reference/react/useState
+- React useEffect: https://react.dev/reference/react/useEffect
+- Vite y publicación: https://vite.dev/guide/static-deploy
+- Bootstrap: https://getbootstrap.com/docs/5.3/
